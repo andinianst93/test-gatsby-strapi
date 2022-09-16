@@ -41,7 +41,7 @@ const Wrapper = styled.section`
     text-align: left;
   }
   .main-img {
-    width: 65%;
+    width: 80%;
     display: block;
     margin: 0 auto;
   }
