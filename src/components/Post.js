@@ -31,6 +31,8 @@ const Wrapper = styled.article`
     text-align: center;
   }
   .img {
+    display: block;
+    margin: 0 auto;
     margin-bottom: 1rem;
     border-radius: var(--radius);
     height: 17rem;
@@ -71,6 +73,7 @@ const Wrapper = styled.article`
     padding-bottom: 0.1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     svg {
       margin-left: 0.25rem;
       font-size: 1.2rem;
@@ -123,6 +126,9 @@ const Wrapper = styled.article`
       .underline {
         margin-left: 0;
         margin-right: 0;
+      }
+      .link {
+        justify-content: left;
       }
     }
   }

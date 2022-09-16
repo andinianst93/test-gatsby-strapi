@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Post from "./Post"
 import styled from "styled-components"
 const Posts = ({ posts, title }) => {
@@ -11,9 +10,6 @@ const Posts = ({ posts, title }) => {
           return <Post key={post.id} index={index} {...post} />
         })}
       </div>
-      <Link to="/blog">
-        <button className="btn center-btn">Read More Posts</button>
-      </Link>
     </Wrapper>
   )
 }

@@ -1,22 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import styled from "styled-components"
-import Posts from "../components/Posts"
+import BlogPosts from "../components/BlogPosts"
 const blog = ({ data }) => {
   const {
     allStrapiArticle: { nodes: posts },
   } = data
   return (
     <Layout>
-      <Posts posts={posts} title="All Posts" />
+      <BlogPosts posts={posts} title="All Posts" />
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allStrapiArticle(limit: 3, sort: { fields: updatedAt, order: DESC }) {
+    allStrapiArticle(sort: { fields: updatedAt, order: DESC }) {
       nodes {
         id
         slug
