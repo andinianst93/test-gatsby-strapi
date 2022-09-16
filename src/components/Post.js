@@ -10,7 +10,7 @@ const Post = ({ title, description, updatedAt, author, image, slug }) => {
       <div className="info">
         <h2>{title}</h2>
         <div className="underline"></div>
-        <p>By: {author.username}</p>
+        <p className="author">By: {author.username}</p>
         <p>{description}</p>
         <Link to={`/blog/${slug}`} className="link">
           Continue Reading <IoMdArrowRoundForward />
@@ -31,8 +31,6 @@ const Wrapper = styled.article`
     text-align: center;
   }
   .img {
-    display: block;
-    margin: 0 auto;
     margin-bottom: 1rem;
     border-radius: var(--radius);
     height: 17rem;
@@ -48,8 +46,7 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
   }
-  h2 {
-    font-size: 2rem;
+  h3 {
     font-weight: 400;
     margin-bottom: 1rem;
     text-transform: initial;
@@ -73,14 +70,13 @@ const Wrapper = styled.article`
     padding-bottom: 0.1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     svg {
       margin-left: 0.25rem;
       font-size: 1.2rem;
     }
   }
   .link:hover {
-    border-color: var(--clr-primary-8);
+    border-color: var(--clr-primary-4);
     color: var(--clr-primary-3);
   }
   footer {
@@ -91,12 +87,11 @@ const Wrapper = styled.article`
     align-items: center;
     justify-content: space-between;
     color: var(--clr-grey-5);
-
     & .date {
       display: flex;
       align-items: center;
       & .icon {
-        color: var(--clr-primary-4);
+        color: var(--clr-primary-5);
         margin-right: 0.5rem;
       }
     }
@@ -126,9 +121,6 @@ const Wrapper = styled.article`
       .underline {
         margin-left: 0;
         margin-right: 0;
-      }
-      .link {
-        justify-content: left;
       }
     }
   }

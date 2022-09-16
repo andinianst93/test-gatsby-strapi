@@ -33,7 +33,7 @@ const PostTemplate = ({ data }) => {
 }
 
 const Wrapper = styled.section`
-  width: 85vw;
+  width: 100vw;
   max-width: 1100px;
   margin: 0 auto;
   margin-bottom: 4rem;
