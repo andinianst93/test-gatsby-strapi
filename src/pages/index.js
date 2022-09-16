@@ -30,11 +30,7 @@ export const query = graphql`
           username
         }
         image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
+          url
         }
       }
     }

@@ -1,5 +1,4 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { FaRegClock } from "react-icons/fa"
 import { IoMdArrowRoundForward } from "react-icons/io"
@@ -7,11 +6,7 @@ import styled from "styled-components"
 const Post = ({ title, description, updatedAt, author, image, slug }) => {
   return (
     <Wrapper>
-      <GatsbyImage
-        image={getImage(image.localFile.childImageSharp)}
-        className="img"
-        alt={title}
-      />
+      <img src={image.url} alt={title} className="img" />
       <div className="info">
         <h2>{title}</h2>
         <div className="underline"></div>

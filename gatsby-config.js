@@ -3,9 +3,7 @@ require("dotenv").config({
 })
 
 const strapiConfig = {
-  apiURL: process.env.DEPLOY_URL
-    ? "https://strapi-gatsby-1-demo.herokuapp.com"
-    : process.env.STRAPI_API_URL,
+  apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["article", "user"],
   singleTypes: ["about"],
