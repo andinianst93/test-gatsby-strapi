@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Reactmarkdown from "react-markdown"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const PostTemplate = ({ data }) => {
   const {
     title,
@@ -16,7 +17,11 @@ const PostTemplate = ({ data }) => {
     <Layout>
       <Wrapper className="blog-template-page">
         <article>
-          <img src={image.url} alt="" className="main-img" />
+          <GatsbyImage
+            image={getImage(image.localFile.childImageSharp)}
+            alt={title}
+            className="main-img"
+          />
           <div className="post-info">
             <h1>{title}</h1>
             <p>by {author.username}</p>
@@ -99,7 +104,11 @@ export const query = graphql`
       title
       updatedAt(formatString: "Do MMMM YYYY")
       image {
-        url
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

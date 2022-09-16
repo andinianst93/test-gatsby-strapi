@@ -2,11 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 import { FaRegClock } from "react-icons/fa"
 import { IoMdArrowRoundForward } from "react-icons/io"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 const Post = ({ title, description, updatedAt, author, image, slug }) => {
   return (
     <Wrapper>
-      <img src={image.url} alt={title} className="img" />
+      <GatsbyImage
+        image={getImage(image.localFile.childImageSharp)}
+        alt={title}
+        className="img"
+      />
       <div className="info">
         <h2>{title}</h2>
         <div className="underline"></div>
@@ -46,7 +51,7 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
   }
-  h3 {
+  h2 {
     font-weight: 400;
     margin-bottom: 1rem;
     text-transform: initial;
