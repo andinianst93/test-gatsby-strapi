@@ -8,7 +8,6 @@ const About = ({ data }) => {
   const {
     strapiAbout: { title, image, description },
   } = data
-  console.log(image)
   const pathToImage = image.localFile.childImageSharp.gatsbyImageData
 
   return (
