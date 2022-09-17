@@ -2,6 +2,7 @@ import React, { Children } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import Hero from "../components/Hero"
 import Reactmarkdown from "react-markdown"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const PostTemplate = ({ data }) => {
@@ -15,7 +16,8 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Wrapper className="blog-template-page">
+      <Hero title={title} />
+      <Wrapper>
         <article>
           <GatsbyImage
             image={getImage(image.localFile.childImageSharp)}
@@ -38,18 +40,10 @@ const PostTemplate = ({ data }) => {
 }
 
 const Wrapper = styled.section`
-  width: 100vw;
+  width: 85vw;
   max-width: 1100px;
   margin: 0 auto;
-  margin-bottom: 4rem;
-  .paragraph {
-    text-align: left;
-  }
-  .main-img {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-  }
+  margin-bottom: 5rem;
   .post-info {
     margin: 2rem 0 4rem 0;
     text-align: center;
@@ -69,6 +63,9 @@ const Wrapper = styled.section`
     p {
       color: var(--clr-grey-5);
     }
+    .paragraph {
+      text-align: left;
+    }
     .underline {
       width: 5rem;
       height: 1px;
@@ -82,9 +79,16 @@ const Wrapper = styled.section`
       width: 92vw;
     }
     .main-img {
-      width: 45%;
+      width: 75%;
       display: block;
       margin: 0 auto;
+    }
+  }
+  @media (min-width: 1170px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      column-gap: 4rem;
     }
   }
 `

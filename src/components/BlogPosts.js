@@ -3,14 +3,16 @@ import Post from "./Post"
 import styled from "styled-components"
 const Posts = ({ posts, title }) => {
   return (
-    <Wrapper className="section posts">
-      <h4>{title}</h4>
-      <div className="section-center posts-center">
-        {posts.map((post, index) => {
-          return <Post key={post.id} index={index} {...post} />
-        })}
+    <section className="posts">
+      <h4 className="posts-title">{title}</h4>
+      <div className="posts-center">
+        <article>
+          {posts.map((post, index) => {
+            return <Post key={post.id} index={index} {...post} />
+          })}
+        </article>
       </div>
-    </Wrapper>
+    </section>
   )
 }
 

@@ -13,8 +13,8 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-      <Wrapper className="about-page">
-        <div className="section-center about-center">
+      <Wrapper className="page-center">
+        <div className="about-center">
           <GatsbyImage
             image={getImage(pathToImage)}
             className="about-img"
@@ -49,7 +49,14 @@ export const query = graphql`
 
 const Wrapper = styled.section`
   padding: 7rem 0;
-
+  .underline {
+    width: 5rem;
+    height: 0.25rem;
+    margin-bottom: 1.25rem;
+    background: var(--clr-primary-4);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .about-img {
     margin-bottom: 2rem;
     height: 25rem;
@@ -70,6 +77,10 @@ const Wrapper = styled.section`
     margin-right: 0;
   }
   .about-text p {
+    line-height: 2;
+  }
+  .about-text h1 {
+    font-size: 2.5rem;
     line-height: 2;
   }
 

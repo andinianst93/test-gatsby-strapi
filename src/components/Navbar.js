@@ -46,7 +46,7 @@ const Wrapper = styled.nav`
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 40vw;
+    width: 228px;
   }
   .nav-center {
     width: 90vw;
@@ -62,7 +62,7 @@ const Wrapper = styled.nav`
     margin-bottom: 0.375rem;
   }
   .toggle-btn {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     background: transparent;
     border-color: transparent;
     color: var(--clr-primary-4);

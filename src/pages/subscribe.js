@@ -4,8 +4,8 @@ import styled from "styled-components"
 const subscribe = () => {
   return (
     <Layout>
-      <Wrapper>
-        <article className="subs-form">
+      <Wrapper className="newsletter-page">
+        <div className="subs-form">
           <h3>Get all the latest stories to your inbox</h3>
           <form>
             <div className="form-group">
@@ -26,7 +26,7 @@ const subscribe = () => {
               submit
             </button>
           </form>
-        </article>
+        </div>
       </Wrapper>
     </Layout>
   )

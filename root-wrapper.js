@@ -29,15 +29,19 @@ const GlobalStyle = createGlobalStyle`
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
-  --spacing: 0.2rem;
+  --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 700px;
 }
+
+/*
+=============== 
+Global Styles
+===============
+*/
 
 *,
 ::after,
@@ -47,14 +51,13 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  margin-top: 5rem;
 }
+
 ul {
   list-style-type: none;
 }
@@ -66,6 +69,7 @@ h1,
 h2,
 h3,
 h4 {
+  letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
@@ -86,10 +90,6 @@ h4 {
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
-}
-.logo {
-  width: 40rem;
-  padding: 0;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -114,15 +114,19 @@ p {
     line-height: 1;
   }
 }
+/*  global classes */
 
-.btn {
+.btn,
+.btn-danger {
   text-transform: uppercase;
   background: var(--clr-primary-4);
-  color: var(--clr-white);
+  color: var(--clr-primary-10);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
-  font-weight: 700;
+  font-weight: 400;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
@@ -133,93 +137,80 @@ p {
   color: var(--clr-white);
   background: var(--clr-primary-3);
 }
+
+.btn-danger {
+  color: var(--clr-white);
+  background: var(--clr-red-dark);
+}
+.btn-danger:hover {
+  color: var(--clr-red-dark);
+  background: var(--clr-red-light);
+}
 .center-btn {
   display: block;
   width: 12rem;
   text-align: center;
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto;
 }
-
-.section {
-  padding: 5rem 0;
-}
-
-.section-center {
+/* section */
+.page-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: var(--max-width);
 }
 @media screen and (min-width: 992px) {
-  .section-center {
+  .page-center {
     width: 95vw;
   }
 }
 
-.underline {
-  width: 5rem;
-  height: 0.25rem;
-  margin-bottom: 1.25rem;
-  background: var(--clr-primary-4);
-  margin-left: auto;
-  margin-right: auto;
-}
-.section-title {
-  margin-bottom: 4rem;
-  text-align: center;
-}
 .bg-grey {
   background: var(--clr-grey-10);
 }
+/* social links */
 
-/*
-===============
-Pages
-===============
-*/
-
-.blog-template-page,
-.blog-page,
-.error-page,
-.about-page,
-.sub-page {
-  /* background: var(--clr-grey-10); */
-  min-height: calc(100vh - 5rem - 9rem);
+main {
+  margin-top: -5rem;
 }
-.error-page {
+
+.posts {
+  width: 85vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+.posts-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e12d39;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .posts {
+    width: 92vw;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .posts-center {
+    column-gap: 1rem;
+  }
+}
+.newsletter-page {
+
   display: grid;
   place-items: center;
-  background: var(--clr-grey-10);
-  text-align: center;
 }
-.error-page h1 {
-  text-transform: uppercase;
-  font-size: 8rem;
-  color: var(--clr-primary-4);
-  margin-bottom: 2rem;
+.newsletter-page h2 {
+  text-transform: initial;
+  margin-bottom: 1rem;
 }
-.error-page h2 {
-  text-transform: uppercase;
-  color: var(--clr-primary-4);
-  margin-bottom: 2rem;
-}
-
-/*
-===============
-Template Page
-===============
-*/
-.blog-template-page {
-  padding-top: 3rem;
-  text-align: center;
-}
-.blog-template-page h2 {
-  text-transform: uppercase;
-}
-.blog-template-page p {
-  max-width: 35em;
-  margin: 0 auto;
-  margin-top: 2rem;
+.newsletter-page h4 {
+  text-transform: initial;
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
 }
 
 `

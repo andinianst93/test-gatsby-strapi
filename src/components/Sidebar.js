@@ -65,7 +65,7 @@ const Wrapper = styled.aside`
   }
   .container {
     background: var(--clr-white);
-    width: 65vw;
+    width: 80vw;
     height: 90vh;
     border-radius: 20px;
     position: relative;
@@ -92,7 +92,7 @@ const Wrapper = styled.aside`
         color: var(--clr-grey-5);
         letter-spacing: var(--spacing);
         margin-bottom: 0.5rem;
-        font-size: 2rem;
+        font-size: 1rem;
 
         border-radius: var(--radius);
 

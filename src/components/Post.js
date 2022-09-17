@@ -13,7 +13,7 @@ const Post = ({ title, description, updatedAt, author, image, slug }) => {
         className="img"
       />
       <div className="info">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <div className="underline"></div>
         <p className="author">By: {author.username}</p>
         <p>{description}</p>
@@ -51,7 +51,7 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
   }
-  h2 {
+  h3 {
     font-weight: 400;
     margin-bottom: 1rem;
     text-transform: initial;
@@ -81,8 +81,7 @@ const Wrapper = styled.article`
     }
   }
   .link:hover {
-    border-color: var(--clr-primary-4);
-    color: var(--clr-primary-3);
+    text-decoration: underline;
   }
   footer {
     margin-top: 2rem;
